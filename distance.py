@@ -31,9 +31,11 @@ d = {}
 #     print("{}: {}".format(key, value))
 
 addr1 = ""
+city = ""
 with open('location1.txt', 'r') as file1:
 	lines = file1.readlines()
 	addr1 = lines[0]
+	city = lines[1]
 response = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address={}'.format(addr1))
 resp_json_payload = response.json()
 lat1 = resp_json_payload['results'][0]['geometry']['location']['lat'] 
@@ -56,13 +58,12 @@ while done != True:
 	try:
 		with open('namelist.txt', 'r') as file2:
 			lines = file2.readlines()
-			for i in len(last, lines):
+			for i in range (last, len(lines)):
 				current = i
 				name = lines[i]
-				addr2 = urllib.request.quote(name, "markham")
+				addr2 = urllib.request.quote(name, city)
 				response = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address={}'.format(addr2))
 				resp_json_payload = response.json()
-				print(name)
 				lat2 = resp_json_payload['results'][0]['geometry']['location']['lat'] 
 				long2 = resp_json_payload['results'][0]['geometry']['location']['lng']
 				# print(str(lat2) + "," + str(long2))
