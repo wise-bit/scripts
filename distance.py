@@ -17,7 +17,7 @@ def greatCircleDistance(lat1, lon1, lat2, lon2):
 #         import Tkinter as tkinter
 #         import tkMessageBox as mbox
 # else:
-#         import tkinter
+#         import tkinters
 #         import tkinter.messagebox as mbox
 
 # window = tkinter.Tk()
@@ -32,7 +32,7 @@ d = {}
 
 addr1 = ""
 city = ""
-with open('location1.txt', 'r') as file1:
+with open('textfiles/location1.txt', 'r') as file1:
 	lines = file1.readlines()
 	addr1 = lines[0]
 	city = lines[1]
@@ -56,7 +56,7 @@ done = False
 while done != True:
 	time.sleep(2)
 	try:
-		with open('namelist.txt', 'r') as file2:
+		with open('textfiles/namelist.txt', 'r') as file2:
 			lines = file2.readlines()
 			for i in range (last, len(lines)):
 				current = i
