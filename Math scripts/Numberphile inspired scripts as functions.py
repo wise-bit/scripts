@@ -5,7 +5,8 @@ def nth_digit_to_n_gives_original_number():
 			return(i)
 
 def parker_square_attempt():
-	a,b,c,d,e,f,g,h,i=map(int,"0"*9)
-	return(a,b,c)
+	arr = map(int,"0"*9)
+	s = sum([i**2 for i in arr])
+	return s
 
 print(parker_square_attempt())
