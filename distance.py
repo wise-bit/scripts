@@ -13,16 +13,6 @@ def greatCircleDistance(lat1, lon1, lat2, lon2):
 		return sin(x/2)**2 
 	return 2 * asin(sqrt(haversin(lat2-lat1) + cos(lat1) * cos(lat2) * haversin(lon2-lon1))) * 6371 * 0.02
 
-# if sys.version_info < (3,0):
-#         import Tkinter as tkinter
-#         import tkMessageBox as mbox
-# else:
-#         import tkinters
-#         import tkinter.messagebox as mbox
-
-# window = tkinter.Tk()
-# window.wm_withdraw()
-
 d = {}
 
 #  mydict = {'carl':40, 'alan':2, 'bob':1, 'danny':3}
