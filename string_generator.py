@@ -1,8 +1,10 @@
 import random
 
 alph="abcdefghijklmnopqrstuvwxyz"
+numeric="0123456789"
+hexa=numeric+"abcdef"
 
-def generate(l):
+def generate_para(l):
 	s = ""
 	wordlength = 1
 	for i in range(l):
@@ -13,4 +15,13 @@ def generate(l):
 		wordlength -= 1
 	return s
 
-print(generate(500))
+def generate_word(l):
+	s = ""
+	for i in range(l):
+		if random.random() > 0.7:
+			s += hexa[random.randint(0, len(hexa)-1)]
+		else:
+			s += numeric[random.randint(0, len(numeric)-1)];
+	return s
+
+print(generate_word(16))
