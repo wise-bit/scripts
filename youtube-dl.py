@@ -14,7 +14,7 @@ if __name__ == "__main__":
             print(f"Downloading: {p.title}")
             for video in p.videos:
                 video.streams.get_audio_only().download(path)
-                
+
         except:
             print("Playlist must be unlisted or public, not private!")
 
@@ -22,5 +22,6 @@ if __name__ == "__main__":
         YouTube(link).streams.get_audio_only().download(path)
 
 
-# ys = yt.streams.filter(only_audio=True).get_highest_resolution()  # , progressive=True)
-# https://www.youtube.com/watch?v=Vj4Y1c-DSM0
+# yt.streams.filter(only_audio=True).get_highest_resolution()  # , progressive=True)
+# yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution')[-1].download()
+# TEST: https://www.youtube.com/watch?v=Vj4Y1c-DSM0
