@@ -1,7 +1,15 @@
 from PIL import Image
 
 
-def convert_to_black_and_white(input_image_path, output_image_path, threshold=128):
+def convert_to_black_and_white(input_image_path: str, output_image_path: str, threshold=128):
+    """Adjust this value based on your needs for margin of error
+
+    Args:
+        input_image_path (str): input path
+        output_image_path (str): output path
+        threshold (int, optional): Margin of error. Defaults to 128.
+    """
+
     image = Image.open(input_image_path).convert('L')  # Convert image to greyscale
     image = image.point(lambda p: 255 if p > threshold else 0)
     image.save(output_image_path)
